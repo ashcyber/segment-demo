@@ -1,13 +1,14 @@
 import segment from "./index";
 import { testServerResponse } from "../data";
 
-const SIGN_UP = "Sign Up",
-  LOGIN = "Login",
-  PURCHASE = "Purchase",
-  SELECT_PRODUCT = "Select Product",
-  LIKE_ARTICLE = "Like Article",
-  SHARE_ARTICLE = "Share Article",
-  BOOKMARK_ARTICLE = "Bookmark Article";
+const
+  SIGN_UP           = "User Signed Up",
+  LOGIN             = "User Logged in",
+  PURCHASE          = "Product Purchased",
+  SELECT_PRODUCT    = "Product Selected",
+  LIKE_ARTICLE      = "Article Liked",
+  SHARE_ARTICLE     = "Article Shared",
+  BOOKMARK_ARTICLE  = "Article Bookmarked";
 
 const track = (eventName, props) => {
   segment.track(eventName, props);

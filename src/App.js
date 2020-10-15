@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { Switch, Route, useLocation, Link } from "react-router-dom";
+import Main from "./pages/Main";
+import SecondaryPage from "./pages/SecondaryPage";
+import AnotherPage from "./pages/AnotherPage";
+import { pageView } from "./segment/Events";
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    pageView(location);
+  }, [location]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div>
+        <Link to="/">Home Page </Link>
+        <Link to="/secondary-page">Second Page</Link>
+        <Link to="/another-page">Another Page</Link>
+      </div>
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route exact path="/secondary-page" component={SecondaryPage} />
+        <Route exact path="/another-page" component={AnotherPage} />
+      </Switch>
+    </React.Fragment>
   );
 }
 

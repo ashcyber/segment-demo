@@ -7,6 +7,7 @@ export const testData = {
     name: 'test',
     email: 'test@gmail.com',
     plan: 'free',
+    signup_source: 'web',
   },
   login: {
     email: 'test@gmail.com',
@@ -39,4 +40,3 @@ export const testData = {
     author: 'contentstack',
   },
 }
-

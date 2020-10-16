@@ -1,5 +1,5 @@
 export default window.analytics;
 
-window.analytics.ready(() => {
-  alert("Segment is ready");
-});
+window.analytics.ready((s) => {
+  console.log('segment loaded')
+})

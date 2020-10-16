@@ -9,18 +9,10 @@ import { pageView } from "./segment/Events";
 
 const Navigation = () => (
   <div>
-    <Link exact to="/ecommerce">
-      Ecommerce Events{" "}
-    </Link>{" "}
+    <Link to="/ecommerce">Ecommerce Events </Link> <br />
+    <Link to="/b2b"> B2B SaaS Events </Link>
     <br />
-    <Link exact to="/b2b">
-      {" "}
-      B2B SaaS Events{" "}
-    </Link>
-    <br />
-    <Link exact to="/video">
-      Video Events{" "}
-    </Link>
+    <Link to="/video">Video Events </Link>
     <br />
   </div>
 );

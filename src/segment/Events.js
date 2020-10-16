@@ -1,12 +1,23 @@
-import segment from "./index";
+const { analytics } = window; 
 
-const userID = "abcd_123";
+let segment = {
+  track() {}, 
+  pageview() {},
+  identify() {},
+};  
+
+analytics.ready(() => { 
+  segment = window.analytics; 
+})
+
+const userID = 'user123';
 
 export const track = (eventName, props, context = null) => {
   if (context) segment.track(eventName, props, context);
   else {
     segment.track(eventName, props);
   }
+
 };
 
 export const pageView = ({ pathname }) => {
